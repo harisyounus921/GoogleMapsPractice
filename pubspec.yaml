@@ -39,6 +39,7 @@ dependencies:
   geolocator: ^9.0.1
   http: ^0.13.5
   uuid: ^3.0.6
+  custom_info_window: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+
+  assets:
+    - assets/
+    -
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

@@ -30,10 +30,8 @@ class _getCurrentLucationState extends State<getCurrentLucation> {
     ),
   ];
 
-  loaddata(){
+  void loaddata(){
     getusercurrentlucation().then((value) async {
-      print("my current location");
-      print(value.longitude.toString()+ "  "+value.latitude.toString());
       marker.add( Marker(
         markerId: const MarkerId('2'),
         position: LatLng(value.longitude, value.longitude),
@@ -54,7 +52,7 @@ class _getCurrentLucationState extends State<getCurrentLucation> {
 
   Future <Position> getusercurrentlucation()async{
     await Geolocator.requestPermission()
-        .then((value){}).onError((error, stackTrace) { print("error : " +error.toString());});
+        .then((value){}).onError((error, stackTrace) { print("error : $error");});
     return await Geolocator.getCurrentPosition();
   }
 
@@ -62,7 +60,7 @@ class _getCurrentLucationState extends State<getCurrentLucation> {
     // TODO: implement initState
     super.initState();
     marker.addAll(list);
-    loaddata();
+    //loaddata();
   }
   @override
 
@@ -71,9 +69,11 @@ class _getCurrentLucationState extends State<getCurrentLucation> {
         body: SafeArea(
           child: GoogleMap(
             initialCameraPosition: kgoogleplex,
+
             mapType: MapType.normal,
+            //myLocationEnabled: true,
+
             markers: Set<Marker>.of(marker),
-            myLocationEnabled: true,
             onMapCreated: (GoogleMapController controller){
               _controller.complete(controller);
             },
@@ -84,10 +84,8 @@ class _getCurrentLucationState extends State<getCurrentLucation> {
           child:Icon(Icons.location_on),
           onPressed:(){
               getusercurrentlucation().then((value) async {
-                print("my current location");
-                print(value.longitude.toString()+ "  "+value.latitude.toString());
                 marker.add( Marker(
-                  markerId: const MarkerId('2'),
+                  markerId: const MarkerId('21'),
                   position: LatLng(value.longitude, value.longitude),
                   infoWindow: const InfoWindow(
                     title: "My current location",
@@ -98,8 +96,10 @@ class _getCurrentLucationState extends State<getCurrentLucation> {
                     CameraUpdate.newCameraPosition(CameraPosition(
                       target: LatLng(value.latitude,value.longitude),
                       zoom: 14,
-                    )));
+                    ),
+                    ));
                 setState(() {
+
                 });
               });
             } ,

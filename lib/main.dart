@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_map/Screen/CustomMarkers.dart';
 import 'package:google_map/Screen/HomeScreen.dart';
 import 'package:google_map/Screen/googleplaceapi.dart';
-import 'package:google_map/Utitilies/get_user_current_location.dart';
+import 'package:google_map/Screen/get_user_current_location.dart';
 
 import 'Utitilies/convert_latitues_to_address.dart';
 
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: GoogleplaceApi(),
+      home: CustomMarkerScreen(),
     );
   }
 }
+
+

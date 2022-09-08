@@ -42,11 +42,13 @@ class _homeScreenState extends State<homeScreen> {
       body: SafeArea(
         child: GoogleMap(
           initialCameraPosition: kgoogleplex,
+
           mapType: MapType.normal,
-          markers: Set<Marker>.of(marker),
           myLocationButtonEnabled: true,
           myLocationEnabled: true,
           compassEnabled: true,
+
+          markers: Set<Marker>.of(marker),
           onMapCreated: (GoogleMapController controller){
             _controller.complete(controller);
           },
