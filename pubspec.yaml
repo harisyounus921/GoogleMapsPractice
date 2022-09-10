@@ -40,6 +40,10 @@ dependencies:
   http: ^0.13.5
   uuid: ^3.0.6
   custom_info_window: ^1.0.1
+  animated_splash_screen: ^1.3.0
+  lottie: ^1.4.2
+  introduction_screen: ^3.0.1
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies:
   flutter_test:
@@ -54,7 +58,10 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon.png"
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -67,6 +74,17 @@ flutter:
 
   assets:
     - assets/
+    - assets/Map/silver_theme.json
+    - assets/Map/retro_theme.json
+    - assets/Map/night_theme.json
+    - assets/splash/splash1.json
+    - assets/splash/splash2.json
+    - assets/splash/splash3.json
+    - assets/intoduction/int1.json
+    - assets/intoduction/int2.json
+    - assets/intoduction/int3.json
+    - assets/intoduction/int4.json
+    - assets/intoduction/int5.json
     -
   # assets:
   #   - images/a_dot_burr.jpeg

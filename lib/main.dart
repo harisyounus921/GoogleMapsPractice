@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_map/Screen/CustomMarkers.dart';
-import 'package:google_map/Screen/HomeScreen.dart';
-import 'package:google_map/Screen/googleplaceapi.dart';
-import 'package:google_map/Screen/get_user_current_location.dart';
-
-import 'Utitilies/convert_latitues_to_address.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:google_map/Screen/IntroductionScreen.dart';
+import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,11 +18,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
-      home: CustomMarkerScreen(),
+      home:  AnimatedSplashScreen(
+          duration: 4000,
+          splash: Lottie.asset('assets/splash/splash3.json'),
+          splashIconSize: 450,
+          nextScreen: OnBoardingPage(),
+          splashTransition: SplashTransition.fadeTransition,
+          backgroundColor: Color(0xFF1E4090),
+      )
     );
   }
 }
-
 
